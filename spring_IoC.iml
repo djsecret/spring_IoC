@@ -7,6 +7,7 @@
           <file>file://$MODULE_DIR$/src/main/resources/byannotation.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/byxml.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/factory_method.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/spel.xml</file>
         </fileset>
       </configuration>
     </facet>
