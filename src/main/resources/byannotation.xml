@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.springframework.org/schema/context
-       http://www.springframework.org/schema/context/spring-beans-3.0.xsd">
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-3.0.xsd
+       ">
+
     <context:component-scan base-package="com.neu.byannotation"/>
+
+    <!--  为list注入值  -->
+    <bean id="song1" class="java.lang.String">
+        <constructor-arg value="song1"/>
+    </bean>
+    <bean id="song2" class="java.lang.String">
+        <constructor-arg value="song2"/>
+    </bean>
+
+    <!--  为set注入值 -->
+    <bean id="child1" class="com.neu.byannotation.Child" p:name="child1"/>
+    <bean id="child2" class="com.neu.byannotation.Child" p:name="child2"/>
+
+    <!--  为map注入值  -->
+    <bean id="math" class="java.lang.Integer">
+        <constructor-arg value="10"/>
+    </bean>
+    <bean id="english" class="java.lang.Integer">
+        <constructor-arg value="10"/>
+    </bean>
+    <bean id="music" class="java.lang.Integer">
+        <constructor-arg value="10"/>
+    </bean>
 
 </beans>
