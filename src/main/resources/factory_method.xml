@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!--  使用静态工厂方法  -->
+    <bean id="aaa" class="com.neu.factory_method.StaticFactory" factory-method="createProduct">
+        <constructor-arg value="aaa"/>
+    </bean>
+    <bean id="cdrw" class="com.neu.factory_method.StaticFactory" factory-method="createProduct">
+        <constructor-arg value="cdrw"/>
+    </bean>
+
+    <!--  使用实例工厂方法  -->
+    <bean id="instanceFactory" class="com.neu.factory_method.InstanceFactory">
+        <property name="products">
+            <map>
+                <entry key="aaa1">
+                    <bean class="com.neu.factory_method.Product" p:name="AAA1" p:price="2.5"/>
+                </entry>
+                <entry key="cdrw1">
+                    <bean class="com.neu.factory_method.Product" p:name="CDRW1" p:price="1.2"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="aaa1" factory-bean="instanceFactory" factory-method="createProduct">
+        <constructor-arg value="aaa1"/>
+    </bean>
+    <bean id="cdrw1" factory-bean="instanceFactory" factory-method="createProduct">
+        <constructor-arg value="cdrw1"/>
+    </bean>
+</beans>
