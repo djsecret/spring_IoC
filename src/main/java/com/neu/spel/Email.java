@@ -15,24 +15,43 @@ public class Email
     //引用bean
     @Value("#{emailUtilities}")
     private EmailUtilities emailUtilities;
-    //bean中的属性
+    //bean中的属性并在属性上做计算等操作
     @Value("#{emailUtilities.email}")
     private String email;
-    @Value("#{emailUtilities.password}")
-    private String password;
-    @Value("#{emailUtilities.host}")
+    @Value("#{emailUtilities.count + 12}")
+    private int count;
+    @Value("#{'http://' + emailUtilities.host}")
     private String host;
     //bean中的方法
     @Value("#{emailUtilities.toString()?.toUpperCase()}")
     private String emailStr;
 
+    //调用类和类中静态属性或者方法
+    /*
+    等于      ==  eq
+    小于      <   lt
+    小于等于   <=  le
+    大于      >   gt
+    大于等于   >=  ge
+     */
+    @Value("#{T(java.lang.Math).PI le 100}")
+    private boolean isLittle;
+
+    //正则表达式
+    @Value("#{email.email matches '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.com'}")
+    private boolean isValidEmail;
+
     @Override
     public String toString()
     {
         return "Email{" +
-                "email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", host='" + host + '\'' +
+                "emailUtilities=" + emailUtilities +
+                "\n email='" + email + '\'' +
+                "\n count=" + count +
+                "\n host='" + host + '\'' +
+                "\n emailStr='" + emailStr + '\'' +
+                "\n isLittle='" + isLittle + '\'' +
+                "\n isValidEmail='" + isValidEmail + '\'' +
                 '}';
     }
 
@@ -55,14 +74,34 @@ public class Email
         this.email = email;
     }
 
-    public String getPassword()
+    public EmailUtilities getEmailUtilities()
     {
-        return password;
+        return emailUtilities;
     }
 
-    public void setPassword(String password)
+    public void setEmailUtilities(EmailUtilities emailUtilities)
     {
-        this.password = password;
+        this.emailUtilities = emailUtilities;
+    }
+
+    public int getCount()
+    {
+        return count;
+    }
+
+    public void setCount(int count)
+    {
+        this.count = count;
+    }
+
+    public String getEmailStr()
+    {
+        return emailStr;
+    }
+
+    public void setEmailStr(String emailStr)
+    {
+        this.emailStr = emailStr;
     }
 
     public String getHost()

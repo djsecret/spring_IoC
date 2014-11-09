@@ -17,7 +17,7 @@ public class EmailUtilities
     @Value("#{'aaa@163.com'}")
     private String email;
     @Value("#{'123'}")
-    private String password;
+    private int count;
     @Value("#{'www.163.com'}")
     private String host;
 
@@ -34,14 +34,24 @@ public class EmailUtilities
         this.email = email;
     }
 
-    public String getPassword()
+    public int getCount()
     {
-        return password;
+        return count;
     }
 
-    public void setPassword(String password)
+    public void setCount(int count)
     {
-        this.password = password;
+        this.count = count;
+    }
+
+    public Properties getProperties()
+    {
+        return properties;
+    }
+
+    public void setProperties(Properties properties)
+    {
+        this.properties = properties;
     }
 
     public String getHost()
@@ -59,8 +69,9 @@ public class EmailUtilities
     {
         return "EmailUtilities{" +
                 "email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                ", count=" + count +
                 ", host='" + host + '\'' +
+                ", properties=" + properties +
                 '}';
     }
 
