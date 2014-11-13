@@ -20,7 +20,7 @@ import java.util.Date;
  * Created by ubuntu on 14-11-10.
  */
 @Component
-public class Cashier implements BeanNameAware
+public class Cashier implements BeanNameAware,StorageConfig
 {
     @Value("cashier")
     private String name;
