@@ -24,7 +24,7 @@ public class Cashier implements BeanNameAware,StorageConfig
 {
     @Value("cashier")
     private String name;
-    @Value("/home/ubuntu/IdeaProjects/spring_IoC")
+    @Value("${cashier.path}")
     private String path;
     private BufferedWriter writer;
 
