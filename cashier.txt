@@ -17,5 +17,18 @@ Thu Nov 13 10:01:58 CST 2014checkout
 Thu Nov 13 10:09:20 CST 2014checkout
 Thu Nov 13 10:17:26 CST 2014checkout
 Thu Nov 13 10:33:21 CST 2014checkout
+<<<<<<< HEAD
 Fri Nov 21 21:05:40 CST 2014checkout
 Fri Nov 21 21:05:40 CST 2014checkout
+=======
+Fri Nov 21 22:07:39 CST 2014checkout
+Fri Nov 21 22:07:39 CST 2014checkout
+Fri Nov 21 22:26:38 CST 2014checkout
+Fri Nov 21 22:26:38 CST 2014checkout
+Fri Nov 21 22:28:03 CST 2014checkout
+Fri Nov 21 22:28:03 CST 2014checkout
+Fri Nov 21 23:03:00 CST 2014checkout
+Fri Nov 21 23:03:00 CST 2014checkout
+Fri Nov 21 23:10:04 CST 2014checkout
+Fri Nov 21 23:10:04 CST 2014checkout
+>>>>>>> 2c97991d1e594458f852312790c9efaa5a780d90
